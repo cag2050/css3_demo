@@ -5,11 +5,16 @@ import Hello from '@/components/Hello'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    }
-  ]
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'Hello',
+            component: Hello
+        },
+        {
+            path: '/tableDemo',
+            component: () => import('../views/tableDemo.vue')
+        }
+    ]
 })
